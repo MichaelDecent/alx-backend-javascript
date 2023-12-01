@@ -1,7 +1,7 @@
 export default class HolbertonClass {
-  constuctor(size, name) {
-    this.size = size;
-    this.name = name;
+  constructor(size, location) {
+    this._size = size;
+    this._location = location;
   }
 
   valueOf() {
