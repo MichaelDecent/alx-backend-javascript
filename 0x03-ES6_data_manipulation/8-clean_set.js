@@ -1,10 +1,8 @@
 export default function cleanSet(setArray, checkString) {
-  if (checkString) {
-    const startString = Array.from(setArray).filter((value) => value.startsWith(checkString));
-    if (startString) {
-        const cleanedStrings = startString.map((value) => value.substring(checkString.length));
-	return cleanedStrings.join('-');
-    }
+  if (checkString === undefined || checkString.length === 0) {
+   return '';
   }
-  return '';
+  const startString = Array.from(setArray).filter((value) => value.startsWith(checkString));
+  const cleanedStrings = startString.map((value) => value.substring(checkString.length));
+  return cleanedStrings.join('-');
 }
