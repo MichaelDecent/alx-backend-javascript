@@ -3,8 +3,7 @@ const fs = require('fs');
 function countStudents(filePath) {
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
-            console.error('Error reading the file:', err);
-            return;
+            throw Error('Cannot load the database')
         }
 
         const lines = data.split('\n');
@@ -33,7 +32,7 @@ function countStudents(filePath) {
         const csStudents = csArray.join(", ")
         const sweStudents = sweArray.join(", ")
 
-        console.log("Number of students:", count);
+        console.log(`Number of students: ${count}`);
         console.log(`Number of students in CS: ${csCount}. List: ${csStudents}`);
         console.log(`Number of students in SWE: ${sweCount}. List: ${sweStudents}`);
     });
