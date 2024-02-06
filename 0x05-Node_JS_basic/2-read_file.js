@@ -22,6 +22,7 @@ function countStudents(filePath) {
                 csCount += 1
             } else if (field === 'SWE') {
                 sweArray.push(cols[0]);
+                sweCount += 1
             }
 
             count += 1;
