@@ -11,7 +11,7 @@ function countStudents(filePath) {
         const csArray = [];
         const sweArray = [];
 
-        let count = 0, csCount = 0, sweCount = 0;
+        let count = -2, csCount = 0, sweCount = 0;
 
         lines.forEach((line, index) => {
             cols = line.split(',');
