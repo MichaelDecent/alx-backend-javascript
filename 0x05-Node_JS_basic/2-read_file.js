@@ -30,7 +30,7 @@ function countStudents(filePath) {
         const csStudents = csArray.join(", ")
         const sweStudents = sweArray.join(", ")
 
-        console.log("Number of students: ", count);
+        console.log("Number of students:", count);
         console.log(`Number of students in CS: ${csCount}. List: ${csStudents}`);
         console.log(`Number of students in SWE: ${sweCount}. List: ${sweStudents}`);
     });
