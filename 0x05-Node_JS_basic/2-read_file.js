@@ -14,18 +14,20 @@ function countStudents(filePath) {
         let count = -1, csCount = 0, sweCount = 0;
 
         lines.forEach((line, index) => {
-            cols = line.split(',');
-            field = cols[cols.length - 1].trim();
+            if (line.length !== 0) { // Added parentheses around condition and fixed syntax
+                cols = line.split(',');
+                field = cols[cols.length - 1].trim();
 
-            if (field === 'CS') {
-                csArray.push(cols[0]);
-                csCount += 1
-            } else if (field === 'SWE') {
-                sweArray.push(cols[0]);
-                sweCount += 1
+                if (field === 'CS') {
+                    csArray.push(cols[0]);
+                    csCount += 1;
+                } else if (field === 'SWE') {
+                    sweArray.push(cols[0]);
+                    sweCount += 1;
+                }
+
+                count += 1;
             }
-
-            count += 1;
         });
 
         const csStudents = csArray.join(", ")
@@ -37,4 +39,4 @@ function countStudents(filePath) {
     });
 }
 
-module.exports = countStudents
+module.exports = countStudents;
