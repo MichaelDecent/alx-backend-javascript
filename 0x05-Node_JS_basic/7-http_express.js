@@ -13,10 +13,14 @@ app.get('/', (_, response) => {
 app.get("/students", (_, response) => {
     countStudents(process.argv[2].toString())
         .then((output) => {
-            response.send(['This is the list of our students', output].join('\n'));
+            response
+                .status(200)
+                .send(['This is the list of our students', output].join('\n'));
         })
         .catch((error) => {
-            response.send(error.message)
+            response
+                .status(500)
+                .send(error.message)
         });
 });
 
