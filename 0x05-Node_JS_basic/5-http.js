@@ -12,7 +12,7 @@ const app = http.createServer((req, res) => {
         res.end("Hello Holberton School!")
     } else if (req.url === "/students") {
         res.statusCode = 200;
-        countStudents("database.csv")
+        countStudents(process.argv[2].toString())
             .then(output => {
                 res.end(`This is the list of our students\n${output}`)
             })

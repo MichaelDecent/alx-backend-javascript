@@ -11,7 +11,7 @@ app.get('/', (_, response) => {
 }); 
 
 app.get("/students", (_, response) => {
-    countStudents("database.csv")
+    countStudents(process.argv[2].toString())
         .then(output => {
             response.send(`This is the list of our students\n${output}`)
         })

@@ -15,7 +15,7 @@ function countStudents(filePath) {
 
             let count = -1, csCount = 0, sweCount = 0;
 
-            lines.forEach((line, index) => {
+            lines.forEach((line, _) => {
                 if (line.length !== 0) {
                     cols = line.split(',');
                     field = cols[cols.length - 1].trim();
