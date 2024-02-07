@@ -1,12 +1,12 @@
-const express = require('express');
+const express = require("express")
 
-const app = express();
+const app = express()
 
-app.get('/', (_, res) => {
-  res.send('Hello Holberton School!');
+const port = 1245
+const hostname = "127.0.0.1";
+
+app.get('/', (_, response) => {
+    response.send("Hello Holberton School!");
 });
-app.listen(1245, () => {
-  console.log('Server started and listening to port 1245');
-});
 
-module.exports = app;
+app.listen(port, hostname)
