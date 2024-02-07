@@ -11,9 +11,10 @@ app.get('/', (_, response) => {
 }); 
 
 app.get("/students", (_, response) => {
+    res.write("This is the list of our students\n")
     countStudents(process.argv[2].toString())
         .then(output => {
-            response.send(`This is the list of our students\n${output}`)
+            res.send(['This is the list of our students', output].join('\n'));
         })
         .catch(error => {
             response.statusCode = 500;
