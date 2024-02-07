@@ -9,7 +9,7 @@ export default class StudentsController {
             .then(data => {
                 const responsePart = ['This is the list of our students']
                 Object.entries(data).forEach(([field, studentList]) => {
-                    responsePart.push(`Number of students in ${field}: ${studentList.length}. List: ${studentList}`)
+                    responsePart.push(`Number of students in ${field}: ${studentList.length}. List: ${studentList.join(", ")}`)
                 });
                 return response.status(200).send(responsePart.join("\n"))
             })
