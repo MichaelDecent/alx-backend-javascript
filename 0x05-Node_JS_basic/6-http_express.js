@@ -10,3 +10,5 @@ app.get('/', (_, response) => {
 });
 
 app.listen(port, hostname)
+
+module.exports = app;
