@@ -17,7 +17,7 @@ export default class StudentsController {
             .catch((error) => {
                 response
                     .status(500)
-                    .send("Cannot load the database", error);
+                    .send(error instanceof Error ? error.message : error.toString());
             });
     }
 
@@ -40,7 +40,7 @@ export default class StudentsController {
                 .catch((error) => {
                     response
                         .status(500)
-                        .send("Cannot load the database", error)
+                        .send(error instanceof Error ? error.message : error.toString());
                 })
         } else {
             response.status(500).send('Major parameter must be CS or SWE');
