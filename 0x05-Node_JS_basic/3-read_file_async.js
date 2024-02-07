@@ -17,8 +17,8 @@ function countStudents(filePath) {
 
             lines.forEach((line, _) => {
                 if (line.length !== 0) {
-                    cols = line.split(',');
-                    field = cols[cols.length - 1].trim();
+                    const cols = line.split(',');
+                    const field = cols[cols.length - 1].trim();
 
                     if (field === 'CS') {
                         csArray.push(cols[0]);
