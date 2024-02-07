@@ -18,9 +18,10 @@ app.get("/students", (_, response) => {
                 .send(['This is the list of our students', output].join('\n'));
         })
         .catch((error) => {
+            console.log(error)
             response
                 .status(500)
-                .send(error.message)
+                .send(`This is the list of our students\n${error.message}`);
         });
 });
 
