@@ -1,30 +1,30 @@
-const express = require("express")
+const express = require('express');
 const countStudents = require('./3-read_file_async');
 
 const app = express();
 
-const hostname = "127.0.0.1";
+const hostname = '127.0.0.1';
 const port = 1245;
 
 app.get('/', (_, response) => {
-    response.send("Hello Holberton School!");
-}); 
-
-app.get("/students", (_, response) => {
-    countStudents(process.argv[2].toString())
-        .then((output) => {
-            response
-                .status(200)
-                .send(['This is the list of our students', output].join('\n'));
-        })
-        .catch((error) => {
-            console.log(error)
-            response
-                .status(500)
-                .send(`This is the list of our students\n${error.message}`);
-        });
+  response.send('Hello Holberton School!');
 });
 
-app.listen(port, hostname)
+app.get('/students', (_, response) => {
+  countStudents(process.argv[2].toString())
+    .then((output) => {
+      response
+        .status(200)
+        .send(['This is the list of our students', output].join('\n'));
+    })
+    .catch((error) => {
+      console.log(error);
+      response
+        .status(500)
+        .send(`This is the list of our students\n${error.message}`);
+    });
+});
 
-module.exports = app
+app.listen(port, hostname);
+
+module.exports = app;

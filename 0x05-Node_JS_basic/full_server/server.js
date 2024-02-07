@@ -1,18 +1,14 @@
-import mapRoutes from "./routes/index"
+import mapRoutes from './routes/index';
 
-const express = require("express")
+const express = require('express');
 
-const PORT = 1245
-const HOST = "127.0.0.1"
+const PORT = 1245;
+const HOST = '127.0.0.1';
 
-const app = express()
+const app = express();
 
-mapRoutes(app)
+mapRoutes(app);
 
-app.listen(PORT, HOST)
+app.listen(PORT, HOST);
 
-module.exports = app
-
-
-
-
+module.exports = app;
